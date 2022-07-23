@@ -133,13 +133,6 @@
 		(Graph grUPDATE_BOX lsTop lsLeft lsBottom lsRight 1)
 		(SetPort temp0)
 	)
-	
-	(method (show &tmp temp0 [temp1 4] temp5 [temp6 20])
-		(= temp0 (GetPort))
-		(SetPort 0)
-		(DrawCel 995 13 (- global90 1) 208 145 temp5)
-		(SetPort temp0)
-	)
 )
 
 (instance detailSlider of Slider
@@ -364,10 +357,19 @@
 	
 	(method (doit &tmp temp0)
 		(switch global90
-			(1 (= global90 2))
+			(1 
+				(if (DoSound sndGET_AUDIO_CAPABILITY)
+					(= global90 2)
+				else
+					(Print addText: {*** You're not playing a cd!} init:)
+				)
+			)
 			(2 (= global90 3))
 			(3 (= global90 1))
 		)
-		(gcWin show:)
+		(= temp0 (GetPort))
+		(SetPort 0)
+		(DrawCel 995 13 (- global90 1) 208 145 15)
+		(SetPort temp0)
 	)
 )
