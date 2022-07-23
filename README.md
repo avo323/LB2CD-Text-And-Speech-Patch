@@ -1,8 +1,4 @@
-# LB2CDTextAndSpeechPatch
-
-Laura bow 2 CD text & speech patch for DOSBox
-
-by doomlazer
+# Laura Bow 2 CD Text and Speech Patch for DOSBox
 
 Do not use these patch files with ScummVM or you will be stuck in "both" mode forever - scumm already has a built-in "both" mode for this game anyway.
 
