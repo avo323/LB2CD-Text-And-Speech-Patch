@@ -1,6 +1,6 @@
 # Laura Bow 2 CD Text and Speech Patch for DOSBox
 
-Warning this mod replaces the 100.scr amd 100.hep patch files in your lb2 game directory. IF you intend to remove this patch be sure to backup the origingal files! 
+Warning this mod replaces the 100.scr amd 100.hep patch files in your lb2 game directory. IF you intend to remove this patch be sure to backup the original files! 
 
 ## Installation:
 
