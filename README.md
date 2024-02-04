@@ -1,8 +1,8 @@
 # Laura Bow 2 CD v1.1 Both Text & Speech Patch for DOSBox.
 
-Note: the both option has been available in ScummVM for some time, this patch is intended for DOSBox users, but should not cause any issues if run under SVM.
+The "Both" text & speech option has been hacked into ScummVM for some time. This patch is intended to provide the same functionality for DOSBox and retro hardware users. This patch should not cause any issues if run under ScummVM.
 
-This will requires replacing the 100.scr and 100.hep patch files in your LB2 game directory. It includes all changes from the previous 100.xxx files, backup these files before installation! 
+This patch requires replacing the existing 100.scr and 100.hep files in your LB2 game directory. The new patches include all changes from the previous files, but be sure to backup your original files before installation! 
 
 ## Installation:
 
