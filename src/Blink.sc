@@ -134,7 +134,7 @@
 		)
 		(if
 			(or
-				(and (& global90 $0002) (not modeless))
+				(and (& global90 $0002)(not modeless))
 				(not (HaveMouse))
 			)
 			(= saveCursor (gGame setCursor: global21 1))
@@ -176,7 +176,7 @@
 					)
 				)
 			)
-			(if (& global90 $0002) (DoAudio 3))
+			(if (& global90 $0002)(DoAudio 3))
 			(= modNum -1)
 			(= initialized 0)
 		)
@@ -228,12 +228,12 @@
 		)
 	)
 	
-	(method (say param1 param2)
+	(method (say param1 param2 param3)
 		(if gIconBar (gIconBar disable:))
 		(if (not initialized) (self init:))
-		(= caller (if (and (> argc 1) param2) param2 else 0))
+		(= caller (if (and (> argc 2) param3) param3 else 0))
 		(if (& global90 $0001) (self startText: param1))
-		(if (& global90 $0002) (self startAudio: param1))
+		(if (& global90 $0002) (self startAudio: param2))
 		(cond 
 			(modeless
 				(gLb2MDH addToFront: self)
@@ -278,7 +278,7 @@
 			(= saveCursor gCursorNumber)
 			(gGame setCursor: 996)
 		else
-			(= saveCursor 0)
+			;(= saveCursor 0)
 		)
 		(if showTitle (Print addTitle: name))
 		(Print
@@ -494,7 +494,7 @@
 			(= saveCursor gCursorNumber)
 			(gGame setCursor: 996)
 		else
-			(= saveCursor 0)
+			;(= saveCursor 0)
 		)
 		(if viewInPrint
 			(= temp0 (if useFrame loop else (bust loop?)))

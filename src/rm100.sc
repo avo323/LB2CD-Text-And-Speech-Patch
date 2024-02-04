@@ -135,7 +135,8 @@
 	
 	(method (init)
 		(if (DoSound sndGET_AUDIO_CAPABILITY)
-			(= global90 2)
+			;(= global90 2)
+			(= global90 3)
 		else
 			(= global90 1)
 		)

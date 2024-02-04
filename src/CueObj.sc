@@ -150,7 +150,11 @@
 		(= temp0 (if gLb2DoVerbCode else dftDoVerb))
 		(if (== modNum -1) (= modNum gNumber))
 		(if
-		(and global90 (Message msgGET modNum noun theVerb 0 1))
+			(and
+				global90
+				(Message msgGET modNum noun theVerb 0 1)
+			)
+			;(gLb2Messager modNum: modNum say: noun theVerb 0 0 0 modNum)
 			(gLb2Messager say: noun theVerb 0 0 0 modNum)
 		else
 			(temp0 doit: theVerb self)
