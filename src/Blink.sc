@@ -228,12 +228,12 @@
 		)
 	)
 	
-	(method (say param1 param2 param3)
+	(method (say param1 param2)
 		(if gIconBar (gIconBar disable:))
 		(if (not initialized) (self init:))
-		(= caller (if (and (> argc 2) param3) param3 else 0))
+		(= caller (if (and (> argc 1) param2) param2 else 0))
 		(if (& global90 $0001) (self startText: param1))
-		(if (& global90 $0002) (self startAudio: param2))
+		(if (& global90 $0002) (self startAudio: param1))
 		(cond 
 			(modeless
 				(gLb2MDH addToFront: self)

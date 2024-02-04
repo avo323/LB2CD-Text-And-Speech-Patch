@@ -108,7 +108,7 @@
 		)
 		(DrawCel 995 1 1 56 39 temp5)
 		(DrawCel 995 14 0 138 139 temp5)
-		(DrawCel 995 13 (- global90 1) 208 145 temp5)
+		(DrawCel 995 13 (== global90 2) 208 145 temp5)
 		(DrawCel 995 1 0 146 73 temp5)
 		(DrawCel 995 1 0 186 73 temp5)
 		(DrawCel 995 1 0 226 73 temp5)
@@ -356,20 +356,55 @@
 	)
 	
 	(method (doit &tmp temp0)
-		(switch global90
-			(1 
-				(if (DoSound sndGET_AUDIO_CAPABILITY)
-					(= global90 2)
-				else
-					(Print addText: {*** You're not playing a cd!} init:)
-				)
-			)
-			(2 (= global90 3))
-			(3 (= global90 1))
+		(asm
+			ldi      1
+			bnt      code_054f
+			lsg      global90
+			dup     
+			eq?     
+			bnt      code_052b
+			ldi      2
+			sag      global90
+			ldi      1
+			sat      temp0
+			jmp      code_0539
+code_052b:
+			dup     
+			ldi      2
+			eq?     
+			bnt      code_0539
+			ldi      1
+			sag      global90
+			ldi      0
+			sat      temp0
+code_0539:
+			toss    
+			pushi    6
+			pushi    995
+			pushi    13
+			lst      temp0
+			pushi    154
+			pushi    110
+			pushi    15
+			callk    DrawCel,  12
+			jmp      code_0563
+code_054f:
+			pushi    #font
+			pushi    1
+			lsg      gFont
+			pushi    205
+			pushi    1
+			lofsa    {*** You're not playing a cd!}
+			push    
+			pushi    110
+			pushi    0
+			class    Print
+			send     16
+code_0563:
+			pushi    #show
+			pushi    0
+			self     4
+			ret     
 		)
-		(= temp0 (GetPort))
-		(SetPort 0)
-		(DrawCel 995 13 (- global90 1) 208 145 15)
-		(SetPort temp0)
 	)
 )

@@ -170,16 +170,14 @@
 			)
 			(if (!= (= temp0 (self findTalker: temp0)) -1)
 				(talkerSet add: temp0)
-				;; Thnx Kawa https://sciprogramming.com/community/index.php?topic=1577.msg8632#msg8632
-				(temp0 modNum: param1 say: @temp1 temp201 self param1 param2 param3 param4 param5)
-;;;				(if (& global90 $0002)
-;;;					(temp0 modNum: param1 say: temp201 self)
-;;;				else
-;;;					(temp0
-;;;						modNum: param1
-;;;						say: @temp1 self param1 param2 param3 param4 param5
-;;;					)
-;;;				)
+				(if (& global90 $0002)
+					(temp0 modNum: param1 say: temp201 self)
+				else
+					(temp0
+						modNum: param1
+						say: @temp1 self param1 param2 param3 param4 param5
+					)
+				)
 				(++ curSequence)
 			else
 				(if gNewEventHandler
