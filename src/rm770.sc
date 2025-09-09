@@ -174,7 +174,7 @@
 		(if
 			(and
 				(not local2)
-				(!= global90 2)
+				(== global90 1)
 				(== (client cel?) 4)
 				(!= (client loop?) 5)
 			)
@@ -200,7 +200,7 @@
 		(if
 			(and
 				(not local3)
-				(!= global90 2)
+				(== global90 1)
 				(== (client cel?) 4)
 			)
 			(gGameMusic2 number: 770 flags: 1 loop: 1 play: badguy2)
