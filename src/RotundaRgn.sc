@@ -10,7 +10,7 @@
 (public
 	RotundaRgn 0
 	Countess 1
-	proc93_2 2
+	;proc93_2 2 ;; UNSED
 	Heimlich 3
 	Olympia 4
 	O_Riley 5
@@ -23,111 +23,111 @@
 	Ziggy 12
 )
 
-(procedure (proc93_2 param1)
-	(asm
-		eq?     
-		bnt      code_0437
-		lst      temp2
-		ldi      18
-		add     
-		jmp      code_0451
-code_0437:
-		dup     
-		ldi      768
-		eq?     
-		bnt      code_0445
-		lst      temp2
-		ldi      26
-		add     
-		jmp      code_0451
-code_0445:
-		dup     
-		ldi      1024
-		eq?     
-		bnt      code_0451
-		lst      temp2
-		ldi      61
-		add     
-code_0451:
-		toss    
-		sat      temp1
-		pushi    6
-		pushi    0
-		pTos     28
-		; WARNING: Can't determine property name for index 28
-		pTos     26
-		; WARNING: Can't determine property name for index 26
-		pushi    6
-		push    
-		pushi    1
-		callk    Message,  12
-		not     
-		bnt      code_047b
-		pushi    #say
-		pushi    6
-		pTos     26
-		; WARNING: Can't determine property name for index 26
-		pushi    6
-		pushi    81
-		pushi    0
-		pushi    0
-		pTos     28
-		; WARNING: Can't determine property name for index 28
-		lag      gLb2Messager
-		send     16
-		jmp      code_04ce
-code_047b:
-		pushi    2
-		pushi    2
-		lst      temp1
-		ldi      2
-		sub     
-		lsgi     global296
-		calle    proc27_0,  4
-		bnt      code_049f
-		pushi    #say
-		pushi    6
-		pTos     26
-		; WARNING: Can't determine property name for index 26
-		pushi    6
-		pushi    1
-		pushi    0
-		pushi    0
-		pTos     28
-		; WARNING: Can't determine property name for index 28
-		lag      gLb2Messager
-		send     16
-		jmp      code_04ce
-code_049f:
-		pushi    #say
-		pushi    6
-		pTos     26
-		; WARNING: Can't determine property name for index 26
-		pushi    6
-		lst      temp1
-		pushi    0
-		pushi    0
-		pTos     28
-		; WARNING: Can't determine property name for index 28
-		lag      gLb2Messager
-		send     16
-		pushi    2
-		pushi    2
-		lst      temp1
-		ldi      2
-		sub     
-		leai     @global296
-		push    
-		calle    proc27_1,  4
-		jmp      code_04ce
-		pushi    #doVerb
-		pushi    1
-		lsp      param1
-		super    Actor,  6
-code_04ce:
-		ret     
-	)
-)
+;;;(procedure (proc93_2 param1)
+;;;	(asm
+;;;		eq?     
+;;;		bnt      code_0437
+;;;		lst      temp2
+;;;		ldi      18
+;;;		add     
+;;;		jmp      code_0451
+;;;code_0437:
+;;;		dup     
+;;;		ldi      768
+;;;		eq?     
+;;;		bnt      code_0445
+;;;		lst      temp2
+;;;		ldi      26
+;;;		add     
+;;;		jmp      code_0451
+;;;code_0445:
+;;;		dup     
+;;;		ldi      1024
+;;;		eq?     
+;;;		bnt      code_0451
+;;;		lst      temp2
+;;;		ldi      61
+;;;		add     
+;;;code_0451:
+;;;		toss    
+;;;		sat      temp1
+;;;		pushi    6
+;;;		pushi    0
+;;;		pTos     28
+;;;		; WARNING: Can't determine property name for index 28
+;;;		pTos     26
+;;;		; WARNING: Can't determine property name for index 26
+;;;		pushi    6
+;;;		push    
+;;;		pushi    1
+;;;		callk    Message,  12
+;;;		not     
+;;;		bnt      code_047b
+;;;		pushi    #say
+;;;		pushi    6
+;;;		pTos     26
+;;;		; WARNING: Can't determine property name for index 26
+;;;		pushi    6
+;;;		pushi    81
+;;;		pushi    0
+;;;		pushi    0
+;;;		pTos     28
+;;;		; WARNING: Can't determine property name for index 28
+;;;		lag      gLb2Messager
+;;;		send     16
+;;;		jmp      code_04ce
+;;;code_047b:
+;;;		pushi    2
+;;;		pushi    2
+;;;		lst      temp1
+;;;		ldi      2
+;;;		sub     
+;;;		lsgi     global296
+;;;		calle    proc27_0,  4
+;;;		bnt      code_049f
+;;;		pushi    #say
+;;;		pushi    6
+;;;		pTos     26
+;;;		; WARNING: Can't determine property name for index 26
+;;;		pushi    6
+;;;		pushi    1
+;;;		pushi    0
+;;;		pushi    0
+;;;		pTos     28
+;;;		; WARNING: Can't determine property name for index 28
+;;;		lag      gLb2Messager
+;;;		send     16
+;;;		jmp      code_04ce
+;;;code_049f:
+;;;		pushi    #say
+;;;		pushi    6
+;;;		pTos     26
+;;;		; WARNING: Can't determine property name for index 26
+;;;		pushi    6
+;;;		lst      temp1
+;;;		pushi    0
+;;;		pushi    0
+;;;		pTos     28
+;;;		; WARNING: Can't determine property name for index 28
+;;;		lag      gLb2Messager
+;;;		send     16
+;;;		pushi    2
+;;;		pushi    2
+;;;		lst      temp1
+;;;		ldi      2
+;;;		sub     
+;;;		leai     @global296
+;;;		push    
+;;;		calle    proc27_1,  4
+;;;		jmp      code_04ce
+;;;		pushi    #doVerb
+;;;		pushi    1
+;;;		lsp      param1
+;;;		super    Actor,  6
+;;;code_04ce:
+;;;		ret     
+;;;	)
+;;;)
 
 (class RotundaRgn of Rgn
 	(properties

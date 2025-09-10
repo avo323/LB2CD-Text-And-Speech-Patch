@@ -548,22 +548,22 @@
 	)
 )
 
-(instance sExitEast of Script
-	(properties)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(gGame handsOff:)
-				(gEgo setHeading: 45 setMotion: MoveFwd 20 self)
-			)
-			(1
-				(global2 newRoom: (global2 east?))
-			)
-		)
-	)
-)
-
+;;;(instance sExitEast of Script
+;;;	(properties)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(gGame handsOff:)
+;;;				(gEgo setHeading: 45 setMotion: MoveFwd 20 self)
+;;;			)
+;;;			(1
+;;;				(global2 newRoom: (global2 east?))
+;;;			)
+;;;		)
+;;;	)
+;;;)
+;;;
 (instance sRodinFlipSwitch of Script
 	(properties)
 	

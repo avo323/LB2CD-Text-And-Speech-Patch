@@ -347,22 +347,22 @@
 	)
 )
 
-(instance sExitEast of Script
-	(properties)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(gGame handsOff:)
-				(gEgo setPri: 9 setMotion: MoveFwd 30 self)
-			)
-			(1
-				(gEgo edgeHit: 2)
-				(global2 newRoom: (global2 east?))
-			)
-		)
-	)
-)
+;;;(instance sExitEast of Script ;;UNUSED
+;;;	(properties)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(gGame handsOff:)
+;;;				(gEgo setPri: 9 setMotion: MoveFwd 30 self)
+;;;			)
+;;;			(1
+;;;				(gEgo edgeHit: 2)
+;;;				(global2 newRoom: (global2 east?))
+;;;			)
+;;;		)
+;;;	)
+;;;)
 
 (instance giftShoppeDoor of LbDoor
 	(properties

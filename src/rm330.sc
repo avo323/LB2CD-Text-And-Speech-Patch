@@ -391,17 +391,17 @@
 	)
 )
 
-(instance steveLips of Prop
-	(properties
-		x 127
-		y 57
-		view 1410
-		loop 4
-		priority 15
-		signal $4000
-	)
-)
-
+;;;(instance steveLips of Prop ;;UNUSED
+;;;	(properties
+;;;		x 127
+;;;		y 57
+;;;		view 1410
+;;;		loop 4
+;;;		priority 15
+;;;		signal $4000
+;;;	)
+;;;)
+;;;
 (instance Laura of Talker
 	(properties
 		x 0

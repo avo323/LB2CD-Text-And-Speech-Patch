@@ -300,25 +300,25 @@
 	)
 )
 
-(instance inIntercom of Inset
-	(properties
-		view 520
-		x 162
-		y 79
-		disposeNotOnMe 1
-		noun 13
-	)
-	
-	(method (doVerb theVerb)
-		(switch theVerb
-			(13
-				(proc0_8 0)
-				(global2 newRoom: 520)
-			)
-			(else  (super doVerb: theVerb))
-		)
-	)
-)
+;;;(instance inIntercom of Inset ;;UNUSED
+;;;	(properties
+;;;		view 520
+;;;		x 162
+;;;		y 79
+;;;		disposeNotOnMe 1
+;;;		noun 13
+;;;	)
+;;;	
+;;;	(method (doVerb theVerb)
+;;;		(switch theVerb
+;;;			(13
+;;;				(proc0_8 0)
+;;;				(global2 newRoom: 520)
+;;;			)
+;;;			(else  (super doVerb: theVerb))
+;;;		)
+;;;	)
+;;;)
 
 (instance wrapMusic of WrapMusic
 	(properties)

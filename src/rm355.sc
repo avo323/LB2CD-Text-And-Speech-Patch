@@ -174,53 +174,53 @@
 	)
 )
 
-(instance sIllegal of Script
-	(properties)
-	
-	(method (doit)
-		(if (< local0 100)
-			(Palette palSET_INTENSITY 0 255 (= local0 (+ local0 2)))
-			(if (== local0 100) (self cue:))
-		)
-		(super doit:)
-	)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(gGame handsOn:)
-				(proc0_3 91)
-				(= global123 0)
-				(gUser canInput: 0 canControl: 0)
-				((ScriptID 32 0)
-					room: gNumber
-					originalView: 814
-					init:
-					setLoop: 8
-					setCel: 2
-					posn: 190 175
-				)
-				((ScriptID 90 3)
-					room: gNumber
-					view: 819
-					setLoop: 8
-					setCel: 2
-					posn: 210 180
-				)
-				(gEgo posn: 230 182 setLoop: 8 setCel: 2)
-			)
-			(1
-				(gLb2Messager say: 3 0 0 0 self)
-			)
-			(2 (= seconds 5))
-			(3
-				(= global145 3)
-				(global2 newRoom: 99)
-			)
-		)
-	)
-)
-
+;;;(instance sIllegal of Script ;;UNUSED
+;;;	(properties)
+;;;	
+;;;	(method (doit)
+;;;		(if (< local0 100)
+;;;			(Palette palSET_INTENSITY 0 255 (= local0 (+ local0 2)))
+;;;			(if (== local0 100) (self cue:))
+;;;		)
+;;;		(super doit:)
+;;;	)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(gGame handsOn:)
+;;;				(proc0_3 91)
+;;;				(= global123 0)
+;;;				(gUser canInput: 0 canControl: 0)
+;;;				((ScriptID 32 0)
+;;;					room: gNumber
+;;;					originalView: 814
+;;;					init:
+;;;					setLoop: 8
+;;;					setCel: 2
+;;;					posn: 190 175
+;;;				)
+;;;				((ScriptID 90 3)
+;;;					room: gNumber
+;;;					view: 819
+;;;					setLoop: 8
+;;;					setCel: 2
+;;;					posn: 210 180
+;;;				)
+;;;				(gEgo posn: 230 182 setLoop: 8 setCel: 2)
+;;;			)
+;;;			(1
+;;;				(gLb2Messager say: 3 0 0 0 self)
+;;;			)
+;;;			(2 (= seconds 5))
+;;;			(3
+;;;				(= global145 3)
+;;;				(global2 newRoom: 99)
+;;;			)
+;;;		)
+;;;	)
+;;;)
+;;;
 (instance inErnie_Laura of Inset
 	(properties
 		picture 475

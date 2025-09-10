@@ -649,18 +649,18 @@
 	)
 )
 
-(instance leftDoor of Feature
-	(properties
-		x 94
-		y 88
-		noun 6
-		nsTop 89
-		nsLeft 90
-		nsBottom 134
-		nsRight 99
-		sightAngle 40
-	)
-)
+;;;(instance leftDoor of Feature ;;UNUSED
+;;;	(properties
+;;;		x 94
+;;;		y 88
+;;;		noun 6
+;;;		nsTop 89
+;;;		nsLeft 90
+;;;		nsBottom 134
+;;;		nsRight 99
+;;;		sightAngle 40
+;;;	)
+;;;)
 
 (instance chest of Feature
 	(properties

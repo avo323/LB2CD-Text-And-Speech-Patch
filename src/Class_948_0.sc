@@ -557,74 +557,74 @@
 	)
 )
 
-(instance selectorI of DSelector
-	(properties
-		x 18
-	)
-	
-	(method (handleEvent pEvent &tmp pEventType pEventMessage)
-		(super handleEvent: pEvent)
-		(= pEventType (pEvent type?))
-		(= pEventMessage (pEvent message?))
-		(if
-			(or
-				(and (== pEventType evMOUSEBUTTON) (pEvent claimed?))
-				(and
-					(== pEventType evKEYBOARD)
-					(== pEventMessage KEY_SPACE)
-				)
-			)
-			(if (== (StrAt cursor 0) 62)
-				(StrAt cursor 0 32)
-			else
-				(StrAt cursor 0 62)
-			)
-			(self draw:)
-			(pEvent claimed: 1)
-		)
-		(pEvent claimed?)
-	)
-)
+;;;(instance selectorI of DSelector
+;;;	(properties
+;;;		x 18
+;;;	)
+;;;	
+;;;	(method (handleEvent pEvent &tmp pEventType pEventMessage)
+;;;		(super handleEvent: pEvent)
+;;;		(= pEventType (pEvent type?))
+;;;		(= pEventMessage (pEvent message?))
+;;;		(if
+;;;			(or
+;;;				(and (== pEventType evMOUSEBUTTON) (pEvent claimed?))
+;;;				(and
+;;;					(== pEventType evKEYBOARD)
+;;;					(== pEventMessage KEY_SPACE)
+;;;				)
+;;;			)
+;;;			(if (== (StrAt cursor 0) 62)
+;;;				(StrAt cursor 0 32)
+;;;			else
+;;;				(StrAt cursor 0 62)
+;;;			)
+;;;			(self draw:)
+;;;			(pEvent claimed: 1)
+;;;		)
+;;;		(pEvent claimed?)
+;;;	)
+;;;)
 
-(instance clearBut of DButton
-	(properties
-		state $0001
-		text {Clear}
-	)
-	
-	(method (doit &tmp temp0)
-		(= temp0 0)
-		(while (< temp0 6)
-			(StrAt local380 (* temp0 18) 32)
-			(++ temp0)
-		)
-		(selectorI draw:)
-	)
-)
+;;;(instance clearBut of DButton ;;UNUSED
+;;;	(properties
+;;;		state $0001
+;;;		text {Clear}
+;;;	)
+;;;	
+;;;	(method (doit &tmp temp0)
+;;;		(= temp0 0)
+;;;		(while (< temp0 6)
+;;;			(StrAt local380 (* temp0 18) 32)
+;;;			(++ temp0)
+;;;		)
+;;;		(selectorI draw:)
+;;;	)
+;;;)
 
-(instance allBut of DButton
-	(properties
-		state $0001
-		value 2
-		text {__All__}
-	)
-	
-	(method (doit &tmp temp0)
-		(= temp0 0)
-		(while (< temp0 6)
-			(StrAt local380 (* temp0 18) 62)
-			(++ temp0)
-		)
-		(selectorI draw:)
-	)
-)
+;;;(instance allBut of DButton ;;UNUSED
+;;;	(properties
+;;;		state $0001
+;;;		value 2
+;;;		text {__All__}
+;;;	)
+;;;	
+;;;	(method (doit &tmp temp0)
+;;;		(= temp0 0)
+;;;		(while (< temp0 6)
+;;;			(StrAt local380 (* temp0 18) 62)
+;;;			(++ temp0)
+;;;		)
+;;;		(selectorI draw:)
+;;;	)
+;;;)
 
-(instance doneBut of DButton
-	(properties
-		value 1
-		text { Done_}
-	)
-)
+;;;(instance doneBut of DButton
+;;;	(properties
+;;;		value 1
+;;;		text { Done_}
+;;;	)
+;;;)
 
 (instance wfWin of Window
 	(properties)

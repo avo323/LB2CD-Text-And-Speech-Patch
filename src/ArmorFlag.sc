@@ -146,25 +146,25 @@
 	)
 )
 
-(instance sEnterWest of Script
-	(properties)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(gGame handsOff:)
-				(= cycles 1)
-			)
-			(1
-				(gEgo x: 230 y: 140 edgeHit: 0 setMotion: MoveFwd 20 self)
-			)
-			(2
-				(gGame handsOn:)
-				(self dispose:)
-			)
-		)
-	)
-)
+;;;(instance sEnterWest of Script ;;UNUSED
+;;;	(properties)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(gGame handsOff:)
+;;;				(= cycles 1)
+;;;			)
+;;;			(1
+;;;				(gEgo x: 230 y: 140 edgeHit: 0 setMotion: MoveFwd 20 self)
+;;;			)
+;;;			(2
+;;;				(gGame handsOn:)
+;;;				(self dispose:)
+;;;			)
+;;;		)
+;;;	)
+;;;)
 
 (instance sEnterNorth of Script
 	(properties)

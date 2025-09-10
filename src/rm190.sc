@@ -182,28 +182,28 @@
 	)
 )
 
-(instance creditTitle of Actor
-	(properties
-		x -156
-		y 102
-		view 151
-		loop 9
-		signal $6800
-		moveSpeed 0
-	)
-)
+;;;(instance creditTitle of Actor ;;UNUSED
+;;;	(properties
+;;;		x -156
+;;;		y 102
+;;;		view 151
+;;;		loop 9
+;;;		signal $6800
+;;;		moveSpeed 0
+;;;	)
+;;;)
 
-(instance creditName of Actor
-	(properties
-		x -190
-		y 138
-		view 151
-		loop 9
-		cel 1
-		signal $6800
-		moveSpeed 0
-	)
-)
+;;;(instance creditName of Actor ;;UNUSED
+;;;	(properties
+;;;		x -190
+;;;		y 138
+;;;		view 151
+;;;		loop 9
+;;;		cel 1
+;;;		signal $6800
+;;;		moveSpeed 0
+;;;	)
+;;;)
 
 (instance person3 of Actor
 	(properties

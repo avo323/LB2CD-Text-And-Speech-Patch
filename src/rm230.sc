@@ -270,33 +270,33 @@
 	)
 )
 
-(instance sCopyProBack of Script
-	(properties)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(crod setScript: 0)
-				(gGame setCursor: 0)
-				(= cycles 5)
-			)
-			(1
-				(crod
-					loop: 1
-					posn: 273 152
-					setScript: 0
-					setCycle: End self
-				)
-			)
-			(2 (crod setCycle: Beg self))
-			(3
-				(gGame handsOn:)
-				(crod setScript: sTypeAwayCrod)
-				(self dispose:)
-			)
-		)
-	)
-)
+;;;(instance sCopyProBack of Script
+;;;	(properties)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(crod setScript: 0)
+;;;				(gGame setCursor: 0)
+;;;				(= cycles 5)
+;;;			)
+;;;			(1
+;;;				(crod
+;;;					loop: 1
+;;;					posn: 273 152
+;;;					setScript: 0
+;;;					setCycle: End self
+;;;				)
+;;;			)
+;;;			(2 (crod setCycle: Beg self))
+;;;			(3
+;;;				(gGame handsOn:)
+;;;				(crod setScript: sTypeAwayCrod)
+;;;				(self dispose:)
+;;;			)
+;;;		)
+;;;	)
+;;;)
 
 (instance sSitAtDesk of Script
 	(properties)
@@ -1200,33 +1200,33 @@
 	)
 )
 
-(instance MiscPeople of Narrator
-	(properties
-		x 10
-		y 10
-		talkWidth 150
-		back 15
-	)
-	
-	(method (init)
-		(= font gFont)
-		(super init: &rest)
-	)
-)
+;;;(instance MiscPeople of Narrator ;;UNUSED
+;;;	(properties
+;;;		x 10
+;;;		y 10
+;;;		talkWidth 150
+;;;		back 15
+;;;	)
+;;;	
+;;;	(method (init)
+;;;		(= font gFont)
+;;;		(super init: &rest)
+;;;	)
+;;;)
 
-(instance MidForground of Narrator
-	(properties
-		x 100
-		y 50
-		talkWidth 150
-		back 15
-	)
-	
-	(method (init)
-		(= font gFont)
-		(super init: &rest)
-	)
-)
+;;;(instance MidForground of Narrator ;;UNUSED
+;;;	(properties
+;;;		x 100
+;;;		y 50
+;;;		talkWidth 150
+;;;		back 15
+;;;	)
+;;;	
+;;;	(method (init)
+;;;		(= font gFont)
+;;;		(super init: &rest)
+;;;	)
+;;;)
 
 (instance ManWriting of Narrator
 	(properties

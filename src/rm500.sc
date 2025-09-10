@@ -339,25 +339,25 @@
 	)
 )
 
-(instance lauraSwingingRt of Actor
-	(properties
-		x 185
-		y 187
-		view 504
-		loop 1
-		cel 8
-	)
-)
+;;;(instance lauraSwingingRt of Actor ;;UNUSED
+;;;	(properties
+;;;		x 185
+;;;		y 187
+;;;		view 504
+;;;		loop 1
+;;;		cel 8
+;;;	)
+;;;)
 
-(instance lauraSwingingLt of Actor
-	(properties
-		x 136
-		y 185
-		view 504
-		loop 2
-		cel 9
-	)
-)
+;;;(instance lauraSwingingLt of Actor ;;UNUSED
+;;;	(properties
+;;;		x 136
+;;;		y 185
+;;;		view 504
+;;;		loop 2
+;;;		cel 9
+;;;	)
+;;;)
 
 (instance bobPortrait of Feature
 	(properties
@@ -448,27 +448,27 @@
 	)
 )
 
-(instance skeletonKey of Feature
-	(properties
-		x 270
-		y 100
-		noun 17
-		sightAngle 40
-		onMeCheck $0010
-	)
-	
-	(method (doVerb theVerb)
-		(switch theVerb
-			(1
-				(global2 setScript: sBoschPainting)
-			)
-			(8
-				(global2 setScript: sBoschPainting)
-			)
-			(else  (super doVerb: theVerb))
-		)
-	)
-)
+;;;(instance skeletonKey of Feature
+;;;	(properties
+;;;		x 270
+;;;		y 100
+;;;		noun 17
+;;;		sightAngle 40
+;;;		onMeCheck $0010
+;;;	)
+;;;	
+;;;	(method (doVerb theVerb)
+;;;		(switch theVerb
+;;;			(1
+;;;				(global2 setScript: sBoschPainting)
+;;;			)
+;;;			(8
+;;;				(global2 setScript: sBoschPainting)
+;;;			)
+;;;			(else  (super doVerb: theVerb))
+;;;		)
+;;;	)
+;;;)
 
 (instance erwinPortrait of Feature
 	(properties

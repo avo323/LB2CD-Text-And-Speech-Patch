@@ -1221,61 +1221,61 @@
 	)
 )
 
-(instance sTalkYvette of Script
-	(properties)
-	
-	(method (changeState newState)
-		(switch (= state newState)
-			(0
-				(gGame handsOff:)
-				(gEgo setMotion: PolyPath 68 148 self)
-			)
-			(1
-				(gEgo
-					view: 552
-					setLoop: 5
-					setScale: Scaler 100 100 190 0
-					setCel: 0
-					posn: 77 146
-					cycleSpeed: 12
-					setCycle: ForwardCounter 2 self
-				)
-			)
-			(2
-				(yvette setCycle: Fwd)
-				(gEgo
-					setLoop: 6
-					setCel: 0
-					posn: 75 146
-					setCycle: ForwardCounter 2 self
-				)
-			)
-			(3
-				(yvette setCycle: 0)
-				(gEgo
-					setLoop: 5
-					setCel: 0
-					posn: 77 146
-					setCycle: ForwardCounter 2 self
-				)
-			)
-			(4
-				(gEgo
-					normalize: 831
-					setScale: Scaler 110 0 190 0
-					cycleSpeed: 6
-					posn: 68 148
-				)
-				(proc0_5 gEgo yvette)
-				(= cycles 1)
-			)
-			(5
-				(gEgo setMotion: PolyPath (gEgo x?) 250 self)
-			)
-			(6 (global2 newRoom: 510))
-		)
-	)
-)
+;;;(instance sTalkYvette of Script ;;UNSUSED
+;;;	(properties)
+;;;	
+;;;	(method (changeState newState)
+;;;		(switch (= state newState)
+;;;			(0
+;;;				(gGame handsOff:)
+;;;				(gEgo setMotion: PolyPath 68 148 self)
+;;;			)
+;;;			(1
+;;;				(gEgo
+;;;					view: 552
+;;;					setLoop: 5
+;;;					setScale: Scaler 100 100 190 0
+;;;					setCel: 0
+;;;					posn: 77 146
+;;;					cycleSpeed: 12
+;;;					setCycle: ForwardCounter 2 self
+;;;				)
+;;;			)
+;;;			(2
+;;;				(yvette setCycle: Fwd)
+;;;				(gEgo
+;;;					setLoop: 6
+;;;					setCel: 0
+;;;					posn: 75 146
+;;;					setCycle: ForwardCounter 2 self
+;;;				)
+;;;			)
+;;;			(3
+;;;				(yvette setCycle: 0)
+;;;				(gEgo
+;;;					setLoop: 5
+;;;					setCel: 0
+;;;					posn: 77 146
+;;;					setCycle: ForwardCounter 2 self
+;;;				)
+;;;			)
+;;;			(4
+;;;				(gEgo
+;;;					normalize: 831
+;;;					setScale: Scaler 110 0 190 0
+;;;					cycleSpeed: 6
+;;;					posn: 68 148
+;;;				)
+;;;				(proc0_5 gEgo yvette)
+;;;				(= cycles 1)
+;;;			)
+;;;			(5
+;;;				(gEgo setMotion: PolyPath (gEgo x?) 250 self)
+;;;			)
+;;;			(6 (global2 newRoom: 510))
+;;;		)
+;;;	)
+;;;)
 
 (instance sEmbraceStop of Script
 	(properties)
