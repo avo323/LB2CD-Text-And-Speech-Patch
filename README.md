@@ -10,6 +10,7 @@ Move/copy the following patch files into your Laura Bow 2 CD (version 1.1) game 
 
 24.hep
 24.scr
+99.scr
 100.hep
 100.scr
 105.scr
