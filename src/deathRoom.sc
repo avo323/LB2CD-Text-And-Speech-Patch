@@ -26,7 +26,7 @@
 		)
 		(= temp0 (+ global145 1))
 		(Animate (gOldCast elements:) 0)
-		(DoAudio audPLAY 99 1 45 temp0 1)
+		(if (!= global90 1) (DoAudio audPLAY 99 1 45 temp0 1))
 		(repeat
 			(switch
 				(Print
