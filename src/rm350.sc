@@ -423,6 +423,7 @@
 		(switch (= state newState)
 			(0
 				(proc0_3 25)
+				(gGame handsOff:)
 				(if (== (gWrapSound number?) 335)
 					(gWrapSound fade: 127 5 5 0)
 				else
