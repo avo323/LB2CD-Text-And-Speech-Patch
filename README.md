@@ -1,8 +1,8 @@
 # Laura Bow 2 CD v1.1 Both Text & Speech Patch for DOSBox.
 
-The "Both" text & speech option has been hacked into ScummVM for some time. This patch is intended to provide the same functionality for DOSBox and retro hardware users. This patch should not cause any issues if run under ScummVM.
+The "Both" text & speech option has been patched into LB2 under ScummVM for some time. This repo is intended to provide the same functionality for DOSBox and retro hardware users. It should not cause any issues under ScummVM.
 
-This patch requires replacing the existing 100.scr and 100.hep files in your LB2 game directory. The new patches include all changes from the previous files, but be sure to backup your original files before installation!
+This patch requires replacing the existing 100.scr and 100.hep files in your LB2 game directory. The new patches include all changes from the previous patches, but be sure to backup your original files before installation!
 
 ## Installation:
 
@@ -23,5 +23,5 @@ The game begins with both speech and text enabled. Click the MODE button in the 
 
 ## Additional changes and bug fixes
 
-* Script 770 fixes a DOSBox issue where the rock breaking sound effects interfere with spoken dialog. - thanks to Avo323
-* Script 350 fixes a DOSBox bug that can softlock the game while entering the meuseam. - thanks to Avo323
+* Script 770 fixes an issue where the rock breaking sound effects interfere with spoken dialog. - thanks to Avo323
+* Script 350 fixes a bug that can softlock the game while entering the meuseam. - thanks to Avo323
