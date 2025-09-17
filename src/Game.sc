@@ -277,6 +277,7 @@
 		(self setCursor: global21 1 init:)
 		(self setCursor: gWalkCursor 1)
 		(while (not global4)
+			(Wait 1) ;; NRS patch
 			(self doit:)
 		)
 	)
@@ -315,6 +316,7 @@
 		(gSounds pause: 0)
 		(= global86 (- gB_moveCnt (GetTime)))
 		(while (not global4)
+			(Wait 1)
 			(self doit:)
 		)
 	)

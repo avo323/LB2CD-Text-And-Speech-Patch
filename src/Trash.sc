@@ -436,7 +436,18 @@
 							(== (gWrapSound prevSignal?) -1)
 						)
 					)
-					(-- state)
+					;; start NRS patch
+					;(-- state)
+					(~
+						(~
+							(not
+								(if (== (DoAudio 6) -1)
+									(== (gWrapSound prevSignal?) -1)
+								)
+							)
+						)
+					)
+					;; end NRS patch
 				)
 				(= cycles 1)
 			)
@@ -510,7 +521,18 @@
 							(== (gWrapSound prevSignal?) -1)
 						)
 					)
-					(-- state)
+					;; start NRS patch
+					;(-- state)
+					(~
+						(~
+							(not
+								(if (== (DoAudio 6) -1)
+									(== (gWrapSound prevSignal?) -1)
+								)
+							)
+						)
+					)
+					;; end NRS patch
 				)
 				(= cycles 1)
 			)
