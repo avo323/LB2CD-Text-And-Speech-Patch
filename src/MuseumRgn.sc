@@ -1226,112 +1226,48 @@
 		(self wander:)
 	)
 	
-	(method (wander param1 param2 &tmp temp0 temp1)
-		(asm
-			lap      argc
-			not     
-			bt       code_1394
-			lap      param1
-			not     
-			bnt      code_1437
-code_1394:
-			pToa     room
-			sat      temp1
-code_1398:
-			lst      temp1
-			pToa     room
-			eq?     
-			bnt      code_13ef
-			ldi      0
-			sat      temp1
-			pushi    2
-			pushi    1
-			pushi    100
-			callk    Random,  4
-			sat      temp0
-			lsg      global123
-			ldi      3
-			eq?     
-			bnt      code_13e1
-			lst      temp0
-			ldi      5
-			le?     
-			bnt      code_13c4
-			ldi      450
-			sat      temp1
-			jmp      code_1398
-code_13c4:
-			lst      temp0
-			ldi      10
-			le?     
-			bnt      code_13d3
-			ldi      454
-			sat      temp1
-			jmp      code_1398
-code_13d3:
-			lst      temp0
-			ldi      50
-			le?     
-			bnt      code_1398
-			ldi      500
-			sat      temp1
-			jmp      code_1398
-code_13e1:
-			lst      temp0
-			ldi      40
-			le?     
-			bnt      code_1398
-			ldi      500
-			sat      temp1
-			jmp      code_1398
-code_13ef:
-			lat      temp1
-			bnt      code_141d
-			pTos     room
-			ldi      65535
-			eq?     
-			bnt      code_1410
-			pTos     originalDest
-			ldi      0
-			gt?     
-			bnt      code_140c
-			pushi    #moveTo
-			pushi    1
-			pTos     originalDest
-			self     6
-code_140c:
-			ldi      0
-			aTop     originalDest
-code_1410:
-			pushi    #wander
-			pushi    2
-			lst      temp1
-			pushSelf
-			super    MuseumActor,  8
-			jmp      code_1442
-code_141d:
-			pTos     room
-			ldi      65535
-			ne?     
-			bnt      code_1428
-			pToa     room
-			aTop     originalDest
-code_1428:
-			pushi    #moveTo
-			pushi    1
-			pushi    65535
-			self     6
-			ldi      0
-			aTop     wandering
-			jmp      code_1442
-code_1437:
-			pushi    #wander
-			pushi    1
-			lsp      param1
-			&rest    param2
-			super    MuseumActor,  6
-code_1442:
-			ret     
+	(method (wander param1 &tmp temp0 temp1)
+		(if (or (not argc) (not param1))
+			(= temp1 room)
+			(while (== temp1 room)
+				(= temp1 0)
+				(= temp0 (Random 1 100))
+				(cond
+					((== global123 3) ;act
+						(cond
+							((<= temp0 5)
+								(= temp1 450)
+							)
+							((<= temp0 10)
+								(= temp1 454)
+							)
+							((<= temp0 50)
+								(= temp1 500)
+							)
+						)
+					)
+					((<= temp0 40)
+						(= temp1 500)
+					)
+				)
+			)
+			(if temp1
+				(if (== room -1)
+					(if (> originalDest 0)
+						(self moveTo: originalDest)
+					)
+					(= originalDest 0)
+				)
+				(super wander: temp1 self)
+			else
+				(if (!= room -1)
+					(= originalDest room)
+				)
+				(self moveTo: -1)
+				(= wandering 0)
+			)
+		else
+			(super wander: param1 &rest)
 		)
 	)
 )
@@ -1474,131 +1410,58 @@ code_1442:
 		(self wander:)
 	)
 	
-	(method (wander param1 param2 &tmp temp0 temp1)
-		(asm
-			lap      argc
-			not     
-			bt       code_1729
-			lap      param1
-			not     
-			bnt      code_17eb
-code_1729:
-			pToa     room
-			sat      temp1
-code_172d:
-			lst      temp1
-			pToa     room
-			eq?     
-			bnt      code_17a2
-			ldi      0
-			sat      temp1
-			pushi    2
-			pushi    1
-			pushi    100
-			callk    Random,  4
-			sat      temp0
-			lsg      global123
-			ldi      3
-			eq?     
-			bnt      code_1785
-			lst      temp0
-			ldi      15
-			le?     
-			bnt      code_1759
-			ldi      650
-			sat      temp1
-			jmp      code_172d
-code_1759:
-			lst      temp0
-			ldi      25
-			le?     
-			bnt      code_1768
-			ldi      450
-			sat      temp1
-			jmp      code_172d
-code_1768:
-			lst      temp0
-			ldi      35
-			le?     
-			bnt      code_1777
-			ldi      454
-			sat      temp1
-			jmp      code_172d
-code_1777:
-			lst      temp0
-			ldi      85
-			le?     
-			bnt      code_172d
-			ldi      520
-			sat      temp1
-			jmp      code_172d
-code_1785:
-			lst      temp0
-			ldi      30
-			le?     
-			bnt      code_1794
-			ldi      650
-			sat      temp1
-			jmp      code_172d
-code_1794:
-			lst      temp0
-			ldi      80
-			le?     
-			bnt      code_172d
-			ldi      520
-			sat      temp1
-			jmp      code_172d
-code_17a2:
-			lat      temp1
-			bnt      code_17d0
-			pTos     room
-			ldi      65535
-			eq?     
-			bnt      code_17c3
-			pTos     originalDest
-			ldi      0
-			gt?     
-			bnt      code_17bf
-			pushi    #moveTo
-			pushi    1
-			pTos     originalDest
-			self     6
-code_17bf:
-			ldi      0
-			aTop     originalDest
-code_17c3:
-			pushi    #wander
-			pushi    2
-			lst      temp1
-			pushSelf
-			super    MuseumActor,  8
-			jmp      code_17f6
-code_17d0:
-			pTos     room
-			ldi      65535
-			ne?     
-			bnt      code_17dc
-			pToa     room
-			aTop     originalDest
-code_17dc:
-			pushi    #moveTo
-			pushi    1
-			pushi    65535
-			self     6
-			ldi      0
-			aTop     wandering
-			jmp      code_17f6
-code_17eb:
-			pushi    #wander
-			pushi    1
-			lsp      param1
-			&rest    param2
-			super    MuseumActor,  6
-code_17f6:
-			ret     
+	(method (wander param1 &tmp temp0 temp1)
+		(if (or (not argc) (not param1))
+			(= temp1 room)
+			(while (== temp1 room)
+				(= temp1 0)
+				(= temp0 (Random 1 100))
+				(cond
+					((== global123 3) ;gAct
+						(cond
+							((<= temp0 15)
+								(= temp1 650)
+							)
+							((<= temp0 25)
+								(= temp1 450)
+							)
+							((<= temp0 35)
+								(= temp1 454)
+							)
+							((<= temp0 85)
+								(= temp1 520)
+							)
+						)
+					)
+					((<= temp0 30)
+						(= temp1 650)
+					)
+					((<= temp0 80)
+						(= temp1 520)
+					)
+				)
+			)
+			(if temp1
+				(if (== room -1)
+					(if (> originalDest 0)
+						(self moveTo: originalDest)
+					)
+					(= originalDest 0)
+				)
+				(super wander: temp1 self)
+			else
+				(if (!= room -1)
+					(= originalDest room)
+				)
+				(self moveTo: -1)
+				(= wandering 0)
+			)
+		else
+			(super wander: param1 &rest)
 		)
 	)
 )
+
 
 (instance aORiley of MuseumActor
 	(properties
@@ -1843,96 +1706,39 @@ code_17f6:
 		(self wander:)
 	)
 	
-	(method (wander param1 param2 &tmp temp0 temp1)
-		(asm
-			lap      argc
-			not     
-			bt       code_20f7
-			lap      param1
-			not     
-			bnt      code_217d
-code_20f7:
-			pToa     room
-			sat      temp1
-code_20fb:
-			lst      temp1
-			pToa     room
-			eq?     
-			bnt      code_2134
-			ldi      0
-			sat      temp1
-			pushi    2
-			pushi    1
-			pushi    100
-			callk    Random,  4
-			sat      temp0
-			lsg      global123
-			ldi      3
-			eq?     
-			bnt      code_20fb
-			lst      temp0
-			ldi      5
-			le?     
-			bnt      code_2126
-			ldi      450
-			sat      temp1
-			jmp      code_20fb
-code_2126:
-			lst      temp0
-			ldi      10
-			le?     
-			bnt      code_20fb
-			ldi      454
-			sat      temp1
-			jmp      code_20fb
-code_2134:
-			lat      temp1
-			bnt      code_2162
-			pTos     room
-			ldi      65535
-			eq?     
-			bnt      code_2155
-			pTos     originalDest
-			ldi      0
-			gt?     
-			bnt      code_2151
-			pushi    #moveTo
-			pushi    1
-			pTos     originalDest
-			self     6
-code_2151:
-			ldi      0
-			aTop     originalDest
-code_2155:
-			pushi    #wander
-			pushi    2
-			lst      temp1
-			pushSelf
-			super    MuseumActor,  8
-			jmp      code_2188
-code_2162:
-			pTos     room
-			ldi      65535
-			ne?     
-			bnt      code_216e
-			pToa     room
-			aTop     originalDest
-code_216e:
-			pushi    #moveTo
-			pushi    1
-			pushi    65535
-			self     6
-			ldi      0
-			aTop     wandering
-			jmp      code_2188
-code_217d:
-			pushi    #wander
-			pushi    1
-			lsp      param1
-			&rest    param2
-			super    MuseumActor,  6
-code_2188:
-			ret     
+	(method (wander param1 &tmp temp0 temp1)
+		(if (or (not argc) (not param1))
+			(= temp1 room)
+			(while (== temp1 room)
+				(= temp1 0)
+				(= temp0 (Random 1 100))
+				(if (== global123 3)
+					(if (<= temp0 5)
+						(= temp1 450)
+						(continue)
+					)
+					(if (<= temp0 10)
+						(= temp1 454)
+					)
+				)
+			)
+			(if temp1
+				(if (== room -1)
+					(if (> originalDest 0)
+						(self moveTo: originalDest)
+					)
+					(= originalDest 0)
+				)
+				(super wander: temp1 self)
+			else
+				(if (!= room -1)
+					(= originalDest room)
+				)
+				(self moveTo: -1)
+				(= wandering 0)
+			)
+		else
+			(super wander: param1 &rest)
 		)
 	)
 )
@@ -2006,96 +1812,40 @@ code_2188:
 		(self wander:)
 	)
 	
-	(method (wander param1 param2 &tmp temp0 temp1)
-		(asm
-			lap      argc
-			not     
-			bt       code_23e4
-			lap      param1
-			not     
-			bnt      code_246a
-code_23e4:
-			pToa     room
-			sat      temp1
-code_23e8:
-			lst      temp1
-			pToa     room
-			eq?     
-			bnt      code_2421
-			ldi      0
-			sat      temp1
-			pushi    2
-			pushi    1
-			pushi    100
-			callk    Random,  4
-			sat      temp0
-			lsg      global123
-			ldi      3
-			eq?     
-			bnt      code_23e8
-			lst      temp0
-			ldi      40
-			le?     
-			bnt      code_2413
-			ldi      500
-			sat      temp1
-			jmp      code_23e8
-code_2413:
-			lst      temp0
-			ldi      85
-			le?     
-			bnt      code_23e8
-			ldi      530
-			sat      temp1
-			jmp      code_23e8
-code_2421:
-			lat      temp1
-			bnt      code_244f
-			pTos     room
-			ldi      65535
-			eq?     
-			bnt      code_2442
-			pTos     originalDest
-			ldi      0
-			gt?     
-			bnt      code_243e
-			pushi    #moveTo
-			pushi    1
-			pTos     originalDest
-			self     6
-code_243e:
-			ldi      0
-			aTop     originalDest
-code_2442:
-			pushi    #wander
-			pushi    2
-			lst      temp1
-			pushSelf
-			super    MuseumActor,  8
-			jmp      code_2475
-code_244f:
-			pTos     room
-			ldi      65535
-			ne?     
-			bnt      code_245b
-			pToa     room
-			aTop     originalDest
-code_245b:
-			pushi    #moveTo
-			pushi    1
-			pushi    65535
-			self     6
-			ldi      0
-			aTop     wandering
-			jmp      code_2475
-code_246a:
-			pushi    #wander
-			pushi    1
-			lsp      param1
-			&rest    param2
-			super    MuseumActor,  6
-code_2475:
-			ret     
+	
+	(method (wander param1 &tmp temp0 temp1)
+		(if (or (not argc) (not param1))
+			(= temp1 room)
+			(while (== temp1 room)
+				(= temp1 0)
+				(= temp0 (Random 1 100))
+				(if (== global123 3) ;gAct
+					(if (<= temp0 40)
+						(= temp1 500)
+						(continue)
+					)
+					(if (<= temp0 85)
+						(= temp1 530)
+					)
+				)
+			)
+			(if temp1
+				(if (== room -1)
+					(if (> originalDest 0)
+						(self moveTo: originalDest)
+					)
+					(= originalDest 0)
+				)
+				(super wander: temp1 self)
+			else
+				(if (!= room -1)
+					(= originalDest room)
+				)
+				(self moveTo: -1)
+				(= wandering 0)
+			)
+		else
+			(super wander: param1 &rest)
 		)
 	)
 )
@@ -2266,96 +2016,39 @@ code_2475:
 		(self wander:)
 	)
 	
-	(method (wander param1 param2 &tmp temp0 temp1)
-		(asm
-			lap      argc
-			not     
-			bt       code_29c0
-			lap      param1
-			not     
-			bnt      code_2a46
-code_29c0:
-			pToa     room
-			sat      temp1
-code_29c4:
-			lst      temp1
-			pToa     room
-			eq?     
-			bnt      code_29fd
-			ldi      0
-			sat      temp1
-			pushi    2
-			pushi    1
-			pushi    100
-			callk    Random,  4
-			sat      temp0
-			lsg      global123
-			ldi      3
-			eq?     
-			bnt      code_29c4
-			lst      temp0
-			ldi      5
-			le?     
-			bnt      code_29ef
-			ldi      450
-			sat      temp1
-			jmp      code_29c4
-code_29ef:
-			lst      temp0
-			ldi      10
-			le?     
-			bnt      code_29c4
-			ldi      454
-			sat      temp1
-			jmp      code_29c4
-code_29fd:
-			lat      temp1
-			bnt      code_2a2b
-			pTos     room
-			ldi      65535
-			eq?     
-			bnt      code_2a1e
-			pTos     originalDest
-			ldi      0
-			gt?     
-			bnt      code_2a1a
-			pushi    #moveTo
-			pushi    1
-			pTos     originalDest
-			self     6
-code_2a1a:
-			ldi      0
-			aTop     originalDest
-code_2a1e:
-			pushi    #wander
-			pushi    2
-			lst      temp1
-			pushSelf
-			super    MuseumActor,  8
-			jmp      code_2a51
-code_2a2b:
-			pTos     room
-			ldi      65535
-			ne?     
-			bnt      code_2a37
-			pToa     room
-			aTop     originalDest
-code_2a37:
-			pushi    #moveTo
-			pushi    1
-			pushi    65535
-			self     6
-			ldi      0
-			aTop     wandering
-			jmp      code_2a51
-code_2a46:
-			pushi    #wander
-			pushi    1
-			lsp      param1
-			&rest    param2
-			super    MuseumActor,  6
-code_2a51:
-			ret     
+	(method (wander param1 &tmp temp0 temp1)
+		(if (or (not argc) (not param1))
+			(= temp1 room)
+			(while (== temp1 room)
+				(= temp1 0)
+				(= temp0 (Random 1 100))
+				(if (== global123 3)
+					(if (<= temp0 5)
+						(= temp1 450)
+						(continue)
+					)
+					(if (<= temp0 10)
+						(= temp1 454)
+					)
+				)
+			)
+			(if temp1
+				(if (== room -1)
+					(if (> originalDest 0)
+						(self moveTo: originalDest)
+					)
+					(= originalDest 0)
+				)
+				(super wander: temp1 self)
+			else
+				(if (!= room -1)
+					(= originalDest room)
+				)
+				(self moveTo: -1)
+				(= wandering 0)
+			)
+		else
+			(super wander: param1 &rest)
 		)
 	)
 )
