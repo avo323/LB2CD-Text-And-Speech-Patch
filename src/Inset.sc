@@ -100,6 +100,7 @@
 		(gLb2WH dispose:)
 		((global2 obstacles?) dispose:)
 		(owner inset: 0)
+		(if (== owner global2) (gIconBar enable: 7)) ; control panel restore
 		(if (or (not argc) param1) (self refresh:))
 		(global2 obstacles: oldObstacles)
 		(= gOldCast oldCast)

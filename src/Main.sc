@@ -1304,26 +1304,26 @@
 		(gUser canControl: 1 canInput: 1)
 		(gIconBar enable: 0 1 2 3 4 5 6)
 		(if (not (global2 inset:)) (gIconBar enable: 7))
-		(if
-			(proc999_5
-				gNumber
-				310
-				420
-				454
-				500
-				520
-				525
-				550
-				560
-				620
-				630
-				640
-				700
-				730
-				740
-			)
-			(gIconBar disable: 7)
-		)
+;;;		(if  ;; allow control panel
+;;;			(proc999_5
+;;;				gNumber
+;;;				310
+;;;				420
+;;;				454
+;;;				500
+;;;				520
+;;;				525
+;;;				550
+;;;				560
+;;;				620
+;;;				630
+;;;				640
+;;;				700
+;;;				730
+;;;				740
+;;;			)
+;;;			(gIconBar disable: 7)
+;;;		)
 		(if (and argc param1) (proc0_7))
 		(if (not (gIconBar curInvIcon?)) (gIconBar disable: 5))
 		(if

@@ -247,7 +247,7 @@
 	)
 	
 	(method (cue)
-		(if (not (gEgo has: 11)) (gIconBar disable: 7))
+		;(if (not (gEgo has: 11)) (gIconBar disable: 7))
 		(cond 
 			(local60 (global2 setScript: sKickOut))
 			((and (not (proc0_2 154)) (not (proc0_2 4)))
@@ -462,7 +462,7 @@
 					(gLb2Messager say: 27 0 1)
 				)
 				(gGame handsOn:)
-				(if (not (gEgo has: 11)) (gIconBar disable: 7))
+				;(if (not (gEgo has: 11)) (gIconBar disable: 7))
 				(self dispose:)
 			)
 		)
@@ -481,7 +481,7 @@
 			)
 			(1
 				(gGame handsOn:)
-				(if (not (gEgo has: 11)) (gIconBar disable: 7))
+				;(if (not (gEgo has: 11)) (gIconBar disable: 7))
 				(kickTimer setReal: kickTimer 7)
 				(self dispose:)
 			)

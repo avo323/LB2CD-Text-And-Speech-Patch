@@ -8,6 +8,7 @@ This patch requires replacing the existing 100.scr and 100.hep files in your LB2
 
 Move/copy the following patch files into your Laura Bow 2 CD (version 1.1) game folder:
 
+* 0.scr
 * 24.scr, 24.hep
 * 28.scr. 28.hep
 * 99.scr
@@ -16,7 +17,9 @@ Move/copy the following patch files into your Laura Bow 2 CD (version 1.1) game 
 * 250.scr
 * 350.scr
 * 560.scr
+* 610.scr
 * 770.scr
+* 923.scr
 * 924.scr
 * 928.scr
 * 950.scr
@@ -28,6 +31,7 @@ The game begins with both speech and text enabled. Click the MODE button in the 
 
 ## Additional changes and bug fixes
 
+* Patches 0.scr, 610.scr and 923.scr remove control panel restrictions.  
 * The NewRisingSun patch has been integrated into the game. It supposedly fixes and issue with 'Endless driving' and 'Moving painting to reveal safe' in DOSBox.
 * NRS patches are: 994.scr, 999.scr, 560.scr, 28.scr, 28.hep, 250.scr.
 * Script 770.scr fixes an issue where the rock breaking sound effects interfere with spoken dialog. - thanks to Avo323
