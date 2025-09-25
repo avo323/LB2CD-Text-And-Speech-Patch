@@ -38,6 +38,7 @@
 					init:
 				)
 				(1
+					(DoAudio audSTOP)
 					(gGame restore:)
 				)
 				(2
