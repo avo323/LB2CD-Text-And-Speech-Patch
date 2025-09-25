@@ -13,9 +13,9 @@ The game begins with both speech and text enabled. Click the MODE button in the 
 ## Additional changes and bug fixes
 
 * Patches 0.scr, 610.scr and 923.scr remove the base control panel restrictions.
-* Additional patches remove 'per room' control panel restrictions: 454.scr (others coming soon) 
+* Additional patches remove 'per room' control panel restrictions: 454.scr, 520.scr (others coming soon) 
 * Patch 99.scr enable the previously unused Death Message speech. This patch is optional.
 * The NewRisingSun patch has been integrated into the game. It supposedly fixes and issue with 'Endless driving' and 'Moving painting to reveal safe' in DOSBox.
 * NRS patches are: 994.scr, 999.scr, 560.scr, 28.scr, 28.hep, 250.scr.
 * Patch 770.scr fixes an issue where the rock breaking sound effects interfere with spoken dialog. - thanks to Avo323
-* Patch 350.scr fixes a bug that can softlock the game while entering the meuseam. - thanks to Avo323
+* Patch 350.scr fixes a bug that can softlock the game while entering the museum. - thanks to Avo323
