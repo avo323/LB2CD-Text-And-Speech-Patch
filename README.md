@@ -13,7 +13,7 @@ The game begins with both speech and text enabled. Click the MODE button in the 
 ## Additional changes and bug fixes
 
 * Patches 0.scr, 610.scr and 923.scr remove the base control panel restrictions.
-* Additional patches remove 'per room' control panel restrictions:  
+* Additional patches remove 'per room' control panel restrictions: 454.scr (others coming soon) 
 * Patch 99.scr enable the previously unused Death Message speech. This patch is optional.
 * The NewRisingSun patch has been integrated into the game. It supposedly fixes and issue with 'Endless driving' and 'Moving painting to reveal safe' in DOSBox.
 * NRS patches are: 994.scr, 999.scr, 560.scr, 28.scr, 28.hep, 250.scr.

@@ -72,7 +72,7 @@
 			(456
 				(= style 100)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 				(gEgo
 					init:
 					posn: 96 135
@@ -90,7 +90,7 @@
 				)
 				(lid1 init: stopUpd: approachVerbs: 1 4 2 6 setPri: 7)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 			)
 		)
 		(if (== global123 5)
