@@ -193,7 +193,7 @@
 	)
 	
 	(method (doit)
-		(if (not local4) (gIconBar disable: 7))
+		;(if (not local4) (gIconBar disable: 7))
 		(super doit:)
 	)
 	
