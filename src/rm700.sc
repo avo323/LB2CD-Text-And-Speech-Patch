@@ -35,7 +35,7 @@
 	(method (init)
 		(global2 obstacles: (List new:))
 		((ScriptID 2700 0) doit: (global2 obstacles?))
-		(gIconBar disable: 7)
+		;(gIconBar disable: 7)
 		(gEgo
 			init:
 			normalize: 805
@@ -119,7 +119,7 @@
 			(2
 				(gEgo get: 35 normalize: 805 loop: 3 setScale: 125)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 				(self dispose:)
 			)
 		)
@@ -158,7 +158,7 @@
 				)
 				(gEgo put: 35 normalize: 805 setScale: 125 loop: 3)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 				(self dispose:)
 			)
 		)
@@ -229,7 +229,7 @@
 				)
 				(gEgo normalize: 805 setScale: 125 loop: 1)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 				(self dispose:)
 			)
 		)
@@ -431,7 +431,7 @@
 			(2
 				(gGameMusic2 fade:)
 				(gGame handsOn:)
-				(gIconBar disable: 7)
+				;(gIconBar disable: 7)
 				(self dispose:)
 			)
 		)
@@ -459,7 +459,7 @@
 			(global2 timer: rileyTimer)
 			(self stopUpd:)
 			(gGame handsOn:)
-			(gIconBar disable: 7)
+			;(gIconBar disable: 7)
 		)
 	)
 )
